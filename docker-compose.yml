@@ -1,0 +1,10 @@
+version: "3.7"
+services:
+  nginx:
+    build:
+      context: ./test-dapp-main
+      dockerfile: ./Dockerfile
+    ports:
+      - "80:80"
+    volumes:
+      - ./dist:/usr/share/nginx/html
