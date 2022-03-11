@@ -7,4 +7,4 @@ services:
     ports:
       - "80:80"
     volumes:
-      - ./dist:/usr/share/nginx/html
+      - ./test-dapp-main/dist:/usr/share/nginx/html
