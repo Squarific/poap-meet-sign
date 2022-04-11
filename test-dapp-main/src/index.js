@@ -20,6 +20,8 @@ import {
   failingContractBytecode,
 } from './constants.json';
 
+import { toCanvas as QRCodeToCanvas } from 'qrcode';
+
 let ethersProvider;
 let hstFactory;
 let piggybankFactory;
@@ -781,6 +783,7 @@ const initialize = async () => {
       });
       personalSignResult.innerHTML = sign;
       personalSignVerify.disabled = false;
+      QRCodeToCanvas(document.getElementById("qrcode"), sign);
     } catch (err) {
       console.error(err);
       personalSignResult.innerHTML = `Error: ${err.message}`;
