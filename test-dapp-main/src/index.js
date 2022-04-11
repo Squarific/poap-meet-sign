@@ -783,7 +783,7 @@ const initialize = async () => {
       });
       personalSignResult.innerHTML = sign;
       personalSignVerify.disabled = false;
-      QRCodeToCanvas(document.getElementById("qrcode"), sign);
+      QRCodeToCanvas(document.getElementById("qrcode"), from + "-" + sign);
     } catch (err) {
       console.error(err);
       personalSignResult.innerHTML = `Error: ${err.message}`;
