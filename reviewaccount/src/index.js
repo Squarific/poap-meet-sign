@@ -768,10 +768,12 @@ const initialize = async () => {
     }
   };
 
+  QRCodeToCanvas(document.getElementById("qrcode"), "0xa8255d0f4678455f20929a51d037b84aa529a108-0xee503c62c0a7bbdc2e904a300ca9c1617b416916baa03ca3a09ce8726bfbee765d44c8417400103d2630971daec54eb4661c07f31072ee361cc7ac4404f7abc31b-wnsUOQJXoSRUrjE3");
+
   /**
    * Personal Sign
    */
-   const theSignFunction = async function () {
+  /* const theSignFunction = async function () {
     const exampleMessage = document.getElementById('challengeInput').value;
     try {
       const from = accounts[0];
@@ -783,6 +785,7 @@ const initialize = async () => {
       personalSignResult.innerHTML = sign;
       personalSignVerify.disabled = false;
       QRCodeToCanvas(document.getElementById("qrcode"), from + "-" + sign + "-" + exampleMessage);
+      console.log(from + "-" + sign + "-" + exampleMessage);
     } catch (err) {
       console.error(err);
       personalSignResult.innerHTML = `Error: ${err.message}`;
@@ -800,7 +803,7 @@ const initialize = async () => {
     document.getElementById('challenge_status').innerHTML = "Now sign the challenge";
     theSignFunction();
   }
-  fetch_challenge();
+  fetch_challenge();*/
 
   /**
    * Personal Sign Verify
