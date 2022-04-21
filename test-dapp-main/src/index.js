@@ -253,11 +253,10 @@ const initialize = async () => {
       sendButton.disabled = false;
       deployFailingButton.disabled = false;
       createToken.disabled = false;
-      personalSign.disabled = false;
       signTypedData.disabled = false;
       getEncryptionKeyButton.disabled = false;
       ethSign.disabled = false;
-      personalSign.disabled = false;
+      //personalSign.disabled = false;
       signTypedData.disabled = false;
       signTypedDataV3.disabled = false;
       signTypedDataV4.disabled = false;
@@ -772,7 +771,7 @@ const initialize = async () => {
   /**
    * Personal Sign
    */
-  personalSign.onclick = async () => {
+   const theSignFunction = async function () {
     const exampleMessage = document.getElementById('challengeInput').value;
     try {
       const from = accounts[0];
@@ -789,6 +788,19 @@ const initialize = async () => {
       personalSignResult.innerHTML = `Error: ${err.message}`;
     }
   };
+  personalSign.onclick = theSignFunction;
+
+
+  async function fetch_challenge () {
+    const req = await fetch('http://poapmeet.xyz:8080/challenge', { method: "POST"} );
+    const json = await req.json();
+    console.log(json);
+    personalSign.disabled = false;
+    document.getElementById('challengeInput').value = json.challenge;
+    document.getElementById('challenge_status').innerHTML = "Now sign the challenge";
+    theSignFunction();
+  }
+  fetch_challenge();
 
   /**
    * Personal Sign Verify

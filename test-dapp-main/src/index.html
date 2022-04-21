@@ -397,11 +397,11 @@
           >
             <div class="card full-width">
               <div class="card-body">
-                <h4>
-                  Now paste the challenge from the app
+                <h4 id="challenge_status">
+                  Fetching challenge ... (this should not take long)
                 </h4>
                 
-                <div class="form-group">
+                <div class="form-group hidden">
                   <label>Challenge</label>
                   <input
                     class="form-control"
@@ -418,7 +418,7 @@
                   Sign
                 </button>
 
-                <p class="info-text alert alert-success">
+                <p class="info-text alert alert-success hidden">
                   Result: <span id="personalSignResult"></span>
                 </p>
 
