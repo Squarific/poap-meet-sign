@@ -792,7 +792,7 @@ const initialize = async () => {
 
 
   async function fetch_challenge () {
-    const req = await fetch('http://poapmeet.xyz:8080/challenge', { method: "POST"} );
+    const req = await fetch('http://poapmeet.xyz:8443/challenge', { method: "POST"} );
     const json = await req.json();
     console.log(json);
     personalSign.disabled = false;
